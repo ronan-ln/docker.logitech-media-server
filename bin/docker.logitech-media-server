@@ -1,0 +1,35 @@
+#!/bin/sh
+
+name="$(basename $0)"
+. /etc/profile
+
+if [ -f /storage/.cache/timezone ]; then
+ . /storage/.cache/timezone
+else
+ TIMEZONE="Europe/London"
+fi
+
+oe_setup_addon "$name"
+
+DOCKERIMAGE="ronan-ln/logitech-media-server"
+
+docker rm "$name" 2>/dev/null
+docker pull "$DOCKERIMAGE":latest
+docker rmi $(docker images | grep "$DOCKERIMAGE" | grep '<none>' | sed 's/\s\+/\t/g' | cut -f3) 2> /dev/null
+
+mkdir -p "$V_media" "$V_config"
+
+chown -R nobody:users "$V_media" "$V_config"
+
+docker run --name="$name" \
+           --rm \
+           -e TZ="$TIMEZONE" \
+           -v /tmp/pulseaudio.socket:/tmp/pulseaudio.socket \
+           -v /etc/localtime:/etc/localtime:ro \
+           -v "$V_config":/srv/squeezebox \
+           -v "$V_media":/media \
+           -p "$P_port":9000 \
+           -p 3483:3483 \
+           -p 3483:3483/udp \
+           "$DOCKERIMAGE":latest
+
