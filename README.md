@@ -15,19 +15,21 @@ Installs pulseaudio-utils for parecord
   * Update the custom-convert.conf file for WaveInput to work with Pulseaudio bins
     * SSH into the runnign container
     * Update `/srv/squeezebox/cache/InstalledPlugins/Plugins/WaveInput/custom-convert.conf` with this content
+```
+#
+# wavin
+#
+wavin pcm * *
+	# R
+	[parec] --channels=2 --format=s16le --rate=44100 -d $FILE$
+wavin mp3 * *
+	# RB:{BITRATE=-B %B}
+	[parec] -d $FILE$  | [lame] --silent -q $QUALITY$ -v $BITRATE$ - -
+wavin flc * *
+	# R
+	[parec] -d $FILE$ | [flac] --endian=little --sign=signed --sample-rate=44100 --bps=16 --channels=2 --silent - -
+```
 
-	#
-	# wavin
-	#
-	wavin pcm * *
-        	# R
-        	[parec] --channels=2 --format=s16le --rate=44100 -d $FILE$
-	wavin mp3 * *
-        	# RB:{BITRATE=-B %B}
-        	[parec] -d $FILE$  | [lame] --silent -q $QUALITY$ -v $BITRATE$ - -
-	wavin flc * *
-        	# R
-        	[parec] -d $FILE$ | [flac] --endian=little --sign=signed --sample-rate=44100 --bps=16 --channels=2 --silent - -
   * Add a favourite with URL `wavin:squeezebox.monitor`
   * In Kodi's audio settings use the relevant Pulseaudio output
 
