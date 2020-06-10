@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /etc/profile
+
+# stop and remove container
+docker stop docker.logitech-media-server
+
+# remove image from cron updater list
+sed -i '/logitech-media-server/d' /storage/.kodi/userdata/addon_data/docker.linuxserver.updater/update.sh
+
+pactl unload-module `pactl list short modules | grep /tmp/pulseaudio.socket | cut -f 1`
+pactl unload-module `pactl list short modules | grep sink_name=squeezebox | cut -f 1`
+
