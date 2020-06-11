@@ -21,6 +21,10 @@ msgctxt "#30007"
 msgid "custom-convert.conf"
 msgstr ""
 
+msgctxt "#30009"
+msgid "custom-types.conf"
+msgstr ""
+
 msgctxt "#30008"
 msgid "WebUI port"
 msgstr ""

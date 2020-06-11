@@ -1,6 +1,7 @@
 <settings>
   <setting id="V_config" value="/storage/.kodi/userdata/addon_data/docker.logitech-media-server" />
   <setting id="V_media" value="/media" />
+  <setting id="V_custom_convert" value="/storage/.kodi/addons/docker.logitech-media-server/resources/custom-convert.conf" />
+  <setting id="V_custom_types" value="/storage/.kodi/addons/docker.logitech-media-server/resources/custom-types.conf" />
   <setting id="P_port" value="9000" />
-  <setting id="V_custom" value="/storage/.kodi/addons/docker.logitech-media-server/resources/custom-convert.conf" />
 </settings>

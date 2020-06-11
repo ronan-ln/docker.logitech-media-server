@@ -2,9 +2,10 @@
 <settings>
    <category   label="30000">
       <setting label="30001" type="lsep" />
-      <setting label="30005" type="folder" id="V_config"       default="/storage/.kodi/userdata/addon_data/docker.logitech-media-server"  option="writeable" />
-      <setting label="30006" type="folder" id="V_media"        default="/media"  option="writeable" />
-      <setting label="30007" type="file"   id="V_custom"       default="/storage/.kodi/addons/docker.logitech-media-server/resources/custom-convert.conf" />
-      <setting label="30008" type="number" id="P_port"         default="9000" />
+      <setting label="30005" type="folder" id="V_config"           default="/storage/.kodi/userdata/addon_data/docker.logitech-media-server"  option="writeable" />
+      <setting label="30006" type="folder" id="V_media"            default="/media"  option="writeable" />
+      <setting label="30007" type="file"   id="V_custom_convert"   default="/storage/.kodi/addons/docker.logitech-media-server/resources/custom-convert.conf" />
+      <setting label="30009" type="file"   id="V_custom_types"     default="/storage/.kodi/addons/docker.logitech-media-server/resources/custom-types.conf" />
+      <setting label="30008" type="number" id="P_port"             default="9000" />
    </category>
 </settings>

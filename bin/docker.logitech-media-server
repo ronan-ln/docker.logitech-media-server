@@ -51,7 +51,8 @@ docker run --name="$name" \
            -v /etc/localtime:/etc/localtime:ro \
            -v "$V_config":/srv/squeezebox \
            -v "$V_media":/media \
-           -v "$V_custom":/etc/squeezeboxserver/custom-convert.conf \
+           -v "$V_custom_convert":/etc/squeezeboxserver/custom-convert.conf \
+           -v "$V_custom_types":/etc/squeezeboxserver/custom-types.conf \
            -p "$P_port":9000 \
            -p 3483:3483 \
            -p 3483:3483/udp \
