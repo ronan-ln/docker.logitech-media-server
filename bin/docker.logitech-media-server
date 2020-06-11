@@ -46,6 +46,7 @@ pactl load-module module-null-sink sink_name=squeezebox sink_properties=device.d
 
 docker run --name="$name" \
            --rm \
+           --hostname="lms"
            -e TZ="$TIMEZONE" \
            -v /tmp/pulseaudio.socket:/tmp/pulseaudio.socket \
            -v /etc/localtime:/etc/localtime:ro \
