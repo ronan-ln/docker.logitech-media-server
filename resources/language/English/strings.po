@@ -10,7 +10,7 @@ msgid "Note: Kodi remote sources can not be used as Docker volume host sources"
 msgstr ""
 
 msgctxt "#30005"
-msgid "Logitech Media Server folder (config, prefs, cache)"
+msgid "Config folder"
 msgstr ""
 
 msgctxt "#30006"
@@ -18,7 +18,7 @@ msgid "Media folder"
 msgstr ""
 
 msgctxt "#30007"
-msgid "Map /watch"
+msgid "custom-convert.conf"
 msgstr ""
 
 msgctxt "#30008"
