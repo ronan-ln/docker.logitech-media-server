@@ -14,7 +14,7 @@ fi
 oe_setup_addon "$name"
 
 DOCKERIMAGE="doliana/logitech-media-server"
-DOCKERTAG="latest-8.0"
+DOCKERTAG="latest-8.1"
 
 # add image to cron updater list
 if [ ! -f /storage/.kodi/userdata/addon_data/docker.linuxserver.updater/update.sh ]; then
